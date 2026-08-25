@@ -3,111 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio - mdzinz</title>
+    <title>mdzinz - Portfólio</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
         }
         body {
-            background-color: #121212;
+            background-color: #0b0b0b;
             color: #e0e0e0;
-            text-align: center;
-            padding: 20px;
+            overflow-x: hidden;
         }
+        /* Menu Flutuante Superior */
         header {
-            margin-top: 40px;
-            margin-bottom: 30px;
-        }
-        h1 {
-            color: #fff;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        section {
-            background: #1e1e1e;
-            margin: 20px auto;
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 600px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-        h2 {
-            color: #7289da;
-            margin-bottom: 15px;
-        }
-        p {
-            line-height: 1.5;
-            color: #b0b0b0;
-        }
-        .art-grid {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .art-placeholder {
-            width: 120px;
-            height: 120px;
-            background: #2c2f33;
-            border-radius: 8px;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(20, 20, 20, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid #222;
+            padding: 12px 30px;
+            border-radius: 50px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            color: #72767d;
-            font-size: 0.8rem;
+            justify-content: space-between;
+            width: 90%;
+            max-width: 800px;
+            z-index: 1000;
         }
-        .btn-discord {
-            display: inline-block;
-            background-color: #5865F2;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 5px;
+        .logo {
+            color: #ff3333;
+            font-weight: bold;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+        }
+        nav a {
+            color: #b0b0b0;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        nav a:hover, nav a.active {
+            color: #ff3333;
+        }
+
+        /* Seções Gerais */
+        section {
+            padding: 120px 20px 80px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .hero {
+            text-align: left;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+        .hero h1 span {
+            color: #ff3333;
+        }
+        .hero p {
+            color: #999;
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        .btn-box {
+            display: flex;
+            gap: 15px;
+        }
+        .btn {
+            background: #ff3333;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
-            margin-top: 10px;
-            transition: background 0.2s;
+            transition: transform 0.2s, background 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #cc0000;
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #333;
+            color: #fff;
+        }
+        .btn-outline:hover {
+            border-color: #ff3333;
+            background: transparent;
+        }
+
+        /* Títulos de Seção */
+        h2.title {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #fff;
+            border-left: 5px solid #ff3333;
+            padding-left: 15px;
+        }
+
+        /* Cards de Projetos/Artes */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: #141414;
+            border: 1px solid #222;
+            padding: 25px;
+            border-radius: 15px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #ff3333;
+        }
+        .card h3 {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .card p {
+            color: #888;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Seção Discord */
+        .discord-box {
+            background: linear-gradient(135deg, #141414, #1a1a2e);
+            border: 1px solid #ff3333;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+        }
+        .discord-box h3 {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        .discord-box p {
+            color: #aaa;
+            margin-bottom: 25px;
+        }
+        .btn-discord {
+            background-color: #5865F2;
+            display: inline-block;
         }
         .btn-discord:hover {
             background-color: #4752C4;
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; } /* Simplifica o menu em telas muito pequenas */
+            .hero h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Menu Flutuante -->
     <header>
-        <h1>mdzinz</h1>
-        <p>Meu espaço pessoal na Web</p>
+        <div class="logo">mdzinz.</div>
+        <nav>
+            <a href="#home" class="active">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="#arts">ARTS</a>
+            <a href="#community">COMMUNITY</a>
+        </nav>
     </header>
 
-    <main>
-        <!-- Seção Sobre Mim -->
-        <section>
-            <h2>Sobre Mim</h2>
-            <p>Fala aí! Sou estudante, entusiasta de tecnologia e curto criar coisas novas, gerenciar comunidades e desenhar no papel nas horas vagas.</p>
-        </section>
+    <!-- Início / Home -->
+    <section id="home" class="hero">
+        <h1>Hello Everyone, I'm <span>mdzinz</span></h1>
+        <p>Estudante, entusiasta de tecnologia e criador de conteúdos digitais. Apaixonado por desenhar no papel, programar e gerenciar comunidades.</p>
+        <div class="btn-box">
+            <a href="#community" class="btn">Meu Discord</a>
+            <a href="#arts" class="btn btn-outline">Ver Desenhos</a>
+        </div>
+    </section>
 
-        <!-- Seção de Artes -->
-        <section>
-            <h2>Meus Desenhos</h2>
-            <p style="margin-bottom: 15px;">Alguns dos meus trabalhos feitos no papel:</p>
-            <div class="art-grid">
-                <!-- Substitua por tags <img> com as fotos dos seus desenhos -->
-                <div class="art-placeholder">Arte 1</div>
-                <div class="art-placeholder">Arte 2</div>
-                <div class="art-placeholder">Arte 3</div>
+    <!-- Sobre / About -->
+    <section id="about">
+        <h2 class="title">About Me</h2>
+        <div class="card">
+            <p>Fala aí! Sou fã de tecnologia, curto criar automações e bots para o Discord, além de passar horas desenhando no papel. Estou sempre buscando aprender coisas novas sobre programação e otimização de sistemas.</p>
+        </div>
+    </section>
+
+    <!-- Artes / Arts -->
+    <section id="arts">
+        <h2 class="title">Meus Desenhos</h2>
+        <div class="grid-cards">
+            <div class="card">
+                <h3>Desenho 01</h3>
+                <p>Trabalho em desenvolvimento no papel. (Aqui você poderá colocar a imagem ou foto do seu desenho depois!)</p>
             </div>
-        </section>
+            <div class="card">
+                <h3>Desenho 02</h3>
+                <p>Esboço e traços iniciais feitos à mão.</p>
+            </div>
+            <div class="card">
+                <h3>Desenho 03</h3>
+                <p>Ilustração e finalização.</p>
+            </div>
+        </div>
+    </section>
 
-        <!-- Seção do Discord -->
-        <section>
-            <h2>Comunidade</h2>
-            <p>Quer trocar ideia ou colar com a gente? Entra lá no meu servidor do Discord!</p>
-            <a href="https://discord.gg/zp8yexarQr" class="btn-discord" target="_blank">Acessar Servidor</a>
-        </section>
-    </main>
+    <!-- Comunidade / Discord -->
+    <section id="community">
+        <div class="discord-box">
+            <h3>Servidor "GUILDA" no Discord</h3>
+            <p>Quer trocar ideia, jogar ou colar com a nossa comunidade? Clica no botão abaixo para entrar!</p>
+            <a href="https://discord.gg/zp8yexarQr" target="_blank" class="btn btn-discord">Acessar Servidor do Discord</a>
+        </div>
+    </section>
 
 </body>
 </html>
