@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - mdzinz</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            text-align: center;
+            padding: 20px;
+        }
+        header {
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #fff;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        section {
+            background: #1e1e1e;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        h2 {
+            color: #7289da;
+            margin-bottom: 15px;
+        }
+        p {
+            line-height: 1.5;
+            color: #b0b0b0;
+        }
+        .art-grid {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .art-placeholder {
+            width: 120px;
+            height: 120px;
+            background: #2c2f33;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #72767d;
+            font-size: 0.8rem;
+        }
+        .btn-discord {
+            display: inline-block;
+            background-color: #5865F2;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+        .btn-discord:hover {
+            background-color: #4752C4;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>mdzinz</h1>
+        <p>Meu espaço pessoal na Web</p>
+    </header>
+
+    <main>
+        <!-- Seção Sobre Mim -->
+        <section>
+            <h2>Sobre Mim</h2>
+            <p>Fala aí! Sou estudante, entusiasta de tecnologia e curto criar coisas novas, gerenciar comunidades e desenhar no papel nas horas vagas.</p>
+        </section>
+
+        <!-- Seção de Artes -->
+        <section>
+            <h2>Meus Desenhos</h2>
+            <p style="margin-bottom: 15px;">Alguns dos meus trabalhos feitos no papel:</p>
+            <div class="art-grid">
+                <!-- Substitua por tags <img> com as fotos dos seus desenhos -->
+                <div class="art-placeholder">Arte 1</div>
+                <div class="art-placeholder">Arte 2</div>
+                <div class="art-placeholder">Arte 3</div>
+            </div>
+        </section>
+
+        <!-- Seção do Discord -->
+        <section>
+            <h2>Comunidade</h2>
+            <p>Quer trocar ideia ou colar com a gente? Entra lá no meu servidor do Discord!</p>
+            <a href="https://discord.gg/zp8yexarQr" class="btn-discord" target="_blank">Acessar Servidor</a>
+        </section>
+    </main>
+
+</body>
+</html>
