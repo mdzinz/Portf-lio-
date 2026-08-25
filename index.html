@@ -1,239 +1,180 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mdzinz - Portfólio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            scroll-behavior: smooth;
+    <title>Portfolio - mdzinz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0b0b0b',
+                        cardBg: '#141414',
+                        accentRed: '#e50914',
+                    }
+                }
+            }
         }
-        body {
-            background-color: #0b0b0b;
-            color: #e0e0e0;
-            overflow-x: hidden;
-        }
-        /* Menu Flutuante Superior */
-        header {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(20, 20, 20, 0.85);
-            backdrop-filter: blur(10px);
-            border: 1px solid #222;
-            padding: 12px 30px;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 90%;
-            max-width: 800px;
-            z-index: 1000;
-        }
-        .logo {
-            color: #ff3333;
-            font-weight: bold;
-            font-size: 1.3rem;
-            letter-spacing: 1px;
-        }
-        nav a {
-            color: #b0b0b0;
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-        nav a:hover, nav a.active {
-            color: #ff3333;
-        }
-
-        /* Seções Gerais */
-        section {
-            padding: 120px 20px 80px 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .hero {
-            text-align: left;
-        }
-        .hero h1 {
-            font-size: 3rem;
-            color: #fff;
-            margin-bottom: 15px;
-        }
-        .hero h1 span {
-            color: #ff3333;
-        }
-        .hero p {
-            color: #999;
-            font-size: 1.1rem;
-            max-width: 500px;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-        .btn-box {
-            display: flex;
-            gap: 15px;
-        }
-        .btn {
-            background: #ff3333;
-            color: #fff;
-            padding: 12px 25px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: transform 0.2s, background 0.2s;
-            border: none;
-            cursor: pointer;
-        }
-        .btn:hover {
-            background: #cc0000;
-            transform: translateY(-2px);
-        }
-        .btn-outline {
-            background: transparent;
-            border: 2px solid #333;
-            color: #fff;
-        }
-        .btn-outline:hover {
-            border-color: #ff3333;
-            background: transparent;
-        }
-
-        /* Títulos de Seção */
-        h2.title {
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-            color: #fff;
-            border-left: 5px solid #ff3333;
-            padding-left: 15px;
-        }
-
-        /* Cards de Projetos/Artes */
-        .grid-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-        .card {
-            background: #141414;
-            border: 1px solid #222;
-            padding: 25px;
-            border-radius: 15px;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #ff3333;
-        }
-        .card h3 {
-            color: #fff;
-            margin-bottom: 10px;
-        }
-        .card p {
-            color: #888;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        /* Seção Discord */
-        .discord-box {
-            background: linear-gradient(135deg, #141414, #1a1a2e);
-            border: 1px solid #ff3333;
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-        }
-        .discord-box h3 {
-            color: #fff;
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-        .discord-box p {
-            color: #aaa;
-            margin-bottom: 25px;
-        }
-        .btn-discord {
-            background-color: #5865F2;
-            display: inline-block;
-        }
-        .btn-discord:hover {
-            background-color: #4752C4;
-        }
-
-        @media (max-width: 768px) {
-            nav { display: none; } /* Simplifica o menu em telas muito pequenas */
-            .hero h1 { font-size: 2.2rem; }
-        }
-    </style>
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="bg-darkBg text-white font-sans antialiased selection:bg-accentRed selection:text-white">
 
-    <!-- Menu Flutuante -->
-    <header>
-        <div class="logo">mdzinz.</div>
-        <nav>
-            <a href="#home" class="active">HOME</a>
-            <a href="#about">ABOUT</a>
-            <a href="#arts">ARTS</a>
-            <a href="#community">COMMUNITY</a>
-        </nav>
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-darkBg/90 backdrop-blur-md border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="text-2xl font-bold tracking-wider">Portfolio<span class="text-accentRed">.</span></a>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#home" class="hover:text-accentRed transition">Home</a>
+                <a href="#sobre" class="hover:text-accentRed transition">Sobre Mim</a>
+                <a href="#artes" class="hover:text-accentRed transition">Minhas Artes</a>
+                <a href="#guilda" class="hover:text-accentRed transition">Guilda</a>
+            </nav>
+            <a href="#guilda" class="bg-accentRed hover:bg-red-700 text-white px-5 py-2 rounded-full text-sm font-semibold transition shadow-lg shadow-red-900/30">
+                Discord
+            </a>
+        </div>
     </header>
 
-    <!-- Início / Home -->
-    <section id="home" class="hero">
-        <h1>Hello Everyone, I'm <span>mdzinz</span></h1>
-        <p>Estudante, entusiasta de tecnologia e criador de conteúdos digitais. Apaixonado por desenhar no papel, programar e gerenciar comunidades.</p>
-        <div class="btn-box">
-            <a href="#community" class="btn">Meu Discord</a>
-            <a href="#arts" class="btn btn-outline">Ver Desenhos</a>
-        </div>
-    </section>
-
-    <!-- Sobre / About -->
-    <section id="about">
-        <h2 class="title">About Me</h2>
-        <div class="card">
-            <p>Fala aí! Sou fã de tecnologia, curto criar automações e bots para o Discord, além de passar horas desenhando no papel. Estou sempre buscando aprender coisas novas sobre programação e otimização de sistemas.</p>
-        </div>
-    </section>
-
-    <!-- Artes / Arts -->
-    <section id="arts">
-        <h2 class="title">Meus Desenhos</h2>
-        <div class="grid-cards">
-            <div class="card">
-                <h3>Desenho 01</h3>
-                <p>Trabalho em desenvolvimento no papel. (Aqui você poderá colocar a imagem ou foto do seu desenho depois!)</p>
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen pt-28 flex items-center justify-center px-6">
+        <div class="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <h3 class="text-xl md:text-2xl font-light text-zinc-300">Hello, I am</h3>
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white">mdzinz</h1>
+                <h2 class="text-2xl md:text-3xl font-semibold text-accentRed">Mobile Developer & Creator</h2>
+                <p class="text-zinc-400 text-base md:text-lg leading-relaxed max-w-xl">
+                    Desenvolvendo soluções criativas e experiências digitais direto do celular. Apaixonado por programação, bots de Discord, mapas de Roblox e artes visuais.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#sobre" class="bg-accentRed hover:bg-red-700 text-white px-8 py-3 rounded-full font-medium transition shadow-lg shadow-red-900/40">
+                        Sobre Mim
+                    </a>
+                    <a href="#artes" class="border border-zinc-700 hover:border-accentRed text-white px-8 py-3 rounded-full font-medium transition">
+                        Minhas Artes 🎨
+                    </a>
+                </div>
             </div>
-            <div class="card">
-                <h3>Desenho 02</h3>
-                <p>Esboço e traços iniciais feitos à mão.</p>
-            </div>
-            <div class="card">
-                <h3>Desenho 03</h3>
-                <p>Ilustração e finalização.</p>
+            <div class="flex justify-center">
+                <div class="relative w-72 h-72 md:w-96 md:h-96 rounded-full p-2 border-2 border-accentRed shadow-[0_0_50px_rgba(229,9,20,0.3)]">
+                    <img src="1000072443.jpg" alt="mdzinz Avatar" class="w-full h-full object-cover rounded-full grayscale hover:grayscale-0 transition duration-500">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Comunidade / Discord -->
-    <section id="community">
-        <div class="discord-box">
-            <h3>Servidor "GUILDA" no Discord</h3>
-            <p>Quer trocar ideia, jogar ou colar com a nossa comunidade? Clica no botão abaixo para entrar!</p>
-            <a href="https://discord.gg/zp8yexarQr" target="_blank" class="btn btn-discord">Acessar Servidor do Discord</a>
+    <!-- About Me Section -->
+    <section id="sobre" class="py-24 bg-[#0d0d0d] border-t border-zinc-900 px-6">
+        <div class="max-w-4xl mx-auto space-y-8">
+            <div class="text-center space-y-2">
+                <h2 class="text-4xl font-bold tracking-tight">Sobre Mim</h2>
+                <div class="w-16 h-1 bg-accentRed mx-auto rounded-full"></div>
+            </div>
+            <div class="bg-cardBg p-8 md:p-12 rounded-2xl border border-zinc-800 shadow-xl leading-relaxed text-zinc-300 text-base md:text-lg space-y-4">
+                <p>
+                    Prazer, me chamo <strong class="text-white">mdzinz</strong>, mas pode me chamar de <strong class="text-accentRed">md</strong>. Gosto de programação apesar de ter só um celular, tento desenvolver coisas novas, já fiz um bot de Discord, mapas no Roblox, esse site, e entre outros.
+                </p>
+                <p>
+                    Gosto de testar jogos em desenvolvimento. Sou dono do server <strong class="text-white">GUILDA</strong>, onde ele serve para falar todos os assuntos do mundo, desde que esteja dentro das regras — confere lá depois!
+                </p>
+                <p>
+                    Gosto de desenhar, mas odeio pintar, talvez seja porque eu sou horrível em pintar. Já fiz vários desenhos que não vão estar nesse site e nem em lugar nenhum porque eu perdi eles, mas tem alguns que eu fiz e deixei expostos aqui.
+                </p>
+                <p class="text-zinc-400 italic pt-2 border-t border-zinc-800">
+                    Esse é o básico sobre mim. Obrigado por estar visitando meu site, seja bem-vindo!
+                </p>
+            </div>
         </div>
     </section>
+
+    <!-- My Arts Section -->
+    <section id="artes" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto space-y-12">
+            <div class="text-center space-y-2">
+                <h2 class="text-4xl font-bold tracking-tight">Minhas Artes 🎨</h2>
+                <p class="text-zinc-400">Alguns dos desenhos e esboços que criei</p>
+                <div class="w-16 h-1 bg-accentRed mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-cardBg rounded-xl overflow-hidden border border-zinc-800 hover:border-accentRed transition group">
+                    <div class="h-80 overflow-hidden bg-zinc-900">
+                        <img src="1000070345.png" alt="Desenho 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-lg text-white">Esboço de Personagens</h3>
+                        <p class="text-sm text-zinc-400 mt-1">Arte feita a lápis</p>
+                    </div>
+                </div>
+                <div class="bg-cardBg rounded-xl overflow-hidden border border-zinc-800 hover:border-accentRed transition group">
+                    <div class="h-80 overflow-hidden bg-zinc-900">
+                        <img src="1000072452.jpg" alt="Desenho 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-lg text-white">Cavaleiro Medieval</h3>
+                        <p class="text-sm text-zinc-400 mt-1">Estudo de armadura e espada</p>
+                    </div>
+                </div>
+                <div class="bg-cardBg rounded-xl overflow-hidden border border-zinc-800 hover:border-accentRed transition group">
+                    <div class="h-80 overflow-hidden bg-zinc-900">
+                        <img src="1000072448.jpg" alt="Desenho 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-lg text-white">Personagem com Faixas</h3>
+                        <p class="text-sm text-zinc-400 mt-1">Traço detalhado</p>
+                    </div>
+                </div>
+                <div class="bg-cardBg rounded-xl overflow-hidden border border-zinc-800 hover:border-accentRed transition group">
+                    <div class="h-80 overflow-hidden bg-zinc-900">
+                        <img src="1000072447.jpg" alt="Desenho 4" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-lg text-white">Conceito Criativo</h3>
+                        <p class="text-sm text-zinc-400 mt-1">Estilo único</p>
+                    </div>
+                </div>
+                <div class="bg-cardBg rounded-xl overflow-hidden border border-zinc-800 hover:border-accentRed transition group">
+                    <div class="h-80 overflow-hidden bg-zinc-900">
+                        <img src="1000072449.jpg" alt="Desenho 5" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-lg text-white">Cabelo e Expressão</h3>
+                        <p class="text-sm text-zinc-400 mt-1">Treinamento de traço</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guilda Discord Section -->
+    <section id="guilda" class="py-24 bg-[#0d0d0d] border-t border-zinc-900 px-6">
+        <div class="max-w-4xl mx-auto bg-cardBg border border-zinc-800 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 shadow-2xl">
+            <div class="w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden border-2 border-accentRed shrink-0 shadow-lg shadow-red-900/20">
+                <img src="1000071800.png" alt="Guilda Server Icon" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-4 text-center md:text-left">
+                <div class="inline-block bg-accentRed/10 text-accentRed px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase">
+                    Comunidade Oficial
+                </div>
+                <h2 class="text-3xl font-bold tracking-tight">Servidor GUILDA</h2>
+                <p class="text-zinc-400 text-sm md:text-base">
+                    Um espaço livre para falar sobre todos os assuntos do mundo, fazer novas amizades e trocar ideias, sempre respeitando as regras. Cola lá com a gente!
+                </p>
+                <div>
+                    <a href="https://discord.gg/zp8yexarQr" target="_blank" class="inline-flex items-center gap-2 bg-[#5865F2] hover:bg-[#4752C4] text-white px-8 py-3 rounded-full font-medium transition shadow-lg">
+                        <i class="fa-brands fa-discord text-xl"></i> Entrar no Servidor
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-zinc-900 text-center text-zinc-500 text-sm px-6">
+        <p>&copy; 2026 mdzinz. Criado com dedicação direto do celular 📱✨</p>
+    </footer>
 
 </body>
 </html>
