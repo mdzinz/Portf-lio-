@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - mdzinz</title>
+    <title>Portfólio - mdzinz</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        darkBg: '#0b0b0b',
-                        cardBg: '#141414',
-                        accentRed: '#e50914',
+                        fundoEscuro: '#0b0b0b',
+                        cartaoBg: '#141414',
+                        acentovermelho: '#e50914',
                     }
                 }
             }
@@ -20,161 +20,130 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-darkBg text-white font-sans antialiased selection:bg-accentRed selection:text-white">
+<body class="bg-fundoEscuro text-white font-sans antialiased selection:bg-acentovermelho selection:text-white">
 
-    <!-- Header / Navbar -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-darkBg/90 backdrop-blur-md border-b border-zinc-800">
+    <!-- Cabeçalho / Barra de Navegação -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-fundoEscuro/90 backdrop-md border-b border-zinc-800">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="text-2xl font-bold tracking-wider">Portfolio<span class="text-accentRed">.</span></a>
+            <a href="#lar" class="text-2xl font-black tracking-mais-amplo">Portfólio<span class="text-acentovermelho">.</span></a>
             <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
-                <a href="#home" class="hover:text-accentRed transition">Home</a>
-                <a href="#sobre" class="hover:text-accentRed transition">Sobre Mim</a>
-                <a href="#artes" class="hover:text-accentRed transition">Minhas Artes</a>
-                <a href="#guilda" class="hover:text-accentRed transition">Guilda</a>
+                <a href="#lar" class="transition hover:text-acentovermelho">Lar</a>
+                <a href="#sobre" class="transition hover:text-acentovermelho">Sobre Mim</a>
+                <a href="#artes" class="transition hover:text-acentovermelho">Minhas Artes</a>
+                <a href="#guilda" class="transition hover:text-acentovermelho">GUILDA</a>
             </nav>
-            <a href="#guilda" class="bg-accentRed hover:bg-red-700 text-white px-5 py-2 rounded-full text-sm font-semibold transition shadow-lg shadow-red-900/30">
-                Discord
-            </a>
+            <a href="#guilda" class="bg-acentovermelho hover:bg-red-700 text-white px-5 py-2 rounded-full text-sm font-semibold transition">Discordia</a>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen pt-28 flex items-center justify-center px-6">
+    <!-- Seção Herói -->
+    <section id="lar" class="min-h-screen pt-28 flex items-center justify-center px-6">
         <div class="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div class="space-y-6">
-                <h3 class="text-xl md:text-2xl font-light text-zinc-300">Hello, I am</h3>
-                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white">mdzinz</h1>
-                <h2 class="text-2xl md:text-3xl font-semibold text-accentRed">Mobile Developer & Creator</h2>
-                <p class="text-zinc-400 text-base md:text-lg leading-relaxed max-w-xl">
-                    Desenvolvendo soluções criativas e experiências digitais direto do celular. Apaixonado por programação, bots de Discord, mapas de Roblox e artes visuais.
+                <h3 class="text-2xl font-light text-zinc-300">Olá, eu sou</h3>
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-ajustado text-white">mdzinz</h1>
+                <h2 class="text-2xl md:text-3xl font-semibold text-acentovermelho">Desenvolvedor e criador de conteúdo</h2>
+                <p class="text-zinc-400 base-text md:text-lg entrelinha-relaxada largura-maxima-xl">
+                    Desenvolvendo soluções criativas e experiências digitais direto do celular. Apaixonado por programação, bot e games.
                 </p>
                 <div class="flex flex-wrap gap-4 pt-4">
-                    <a href="#sobre" class="bg-accentRed hover:bg-red-700 text-white px-8 py-3 rounded-full font-medium transition shadow-lg shadow-red-900/40">
-                        Sobre Mim
-                    </a>
-                    <a href="#artes" class="border border-zinc-700 hover:border-accentRed text-white px-8 py-3 rounded-full font-medium transition">
-                        Minhas Artes 🎨
-                    </a>
+                    <a href="#sobre" class="bg-acentovermelho hover:bg-red-700 text-white px-8 py-3 rounded-full font-medium transition">Sobre Mim</a>
+                    <a href="#artes" class="border border-zinc-700 hover:border-acentovermelho text-white px-8 py-3 rounded-full font-medium transition">Minhas Artes</a>
                 </div>
             </div>
             <div class="flex justify-center">
-                <div class="relative w-72 h-72 md:w-96 md:h-96 rounded-full p-2 border-2 border-accentRed shadow-[0_0_50px_rgba(229,9,20,0.3)]">
-                    <img src="1000072443.jpg" alt="mdzinz Avatar" class="w-full h-full object-cover rounded-full grayscale hover:grayscale-0 transition duration-500">
+                <div class="relativo w-72 h-72 md:w-96 md:h-96 arredondado-completo p-2 border-2 border-acentovermelho sombra-[0_0_50px_rgba(229,9,20,0.3)]">
+                    <img src="20260106_165138-1.jpg" alt="Avatar mdzinz" class="w-full h-full object-cover rounded-full grayscale hover:grayscale-0 transition duration-500">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Me Section -->
+    <!-- Seção Sobre Mim -->
     <section id="sobre" class="py-24 bg-[#0d0d0d] border-t border-zinc-900 px-6">
-        <div class="max-w-4xl mx-auto space-y-8">
-            <div class="text-center space-y-2">
-                <h2 class="text-4xl font-bold tracking-tight">Sobre Mim</h2>
-                <div class="w-16 h-1 bg-accentRed mx-auto rounded-full"></div>
+        <div class="max-w-4xl mx-auto espaço-y-8">
+            <div class="espaço centralizado no texto-y-2">
+                <h2 class="text-4xl font-negrito espaçamento-ajustado">Sobre Mim</h2>
+                <div class="w-16 h-1 bg-acentovermelho mx-auto rounded-full"></div>
             </div>
-            <div class="bg-cardBg p-8 md:p-12 rounded-2xl border border-zinc-800 shadow-xl leading-relaxed text-zinc-300 text-base md:text-lg space-y-4">
-                <p>
-                    Prazer, me chamo <strong class="text-white">mdzinz</strong>, mas pode me chamar de <strong class="text-accentRed">md</strong>. Gosto de programação apesar de ter só um celular, tento desenvolver coisas novas, já fiz um bot de Discord, mapas no Roblox, esse site, e entre outros.
-                </p>
-                <p>
-                    Gosto de testar jogos em desenvolvimento. Sou dono do server <strong class="text-white">GUILDA</strong>, onde ele serve para falar todos os assuntos do mundo, desde que esteja dentro das regras — confere lá depois!
-                </p>
-                <p>
-                    Gosto de desenhar, mas odeio pintar, talvez seja porque eu sou horrível em pintar. Já fiz vários desenhos que não vão estar nesse site e nem em lugar nenhum porque eu perdi eles, mas tem alguns que eu fiz e deixei expostos aqui.
-                </p>
-                <p class="text-zinc-400 italic pt-2 border-t border-zinc-800">
+            <div class="bg-cartaoBg p-8 md:p-12 rounded-2xl border border-zinc-800 shadow-xl leading-relaxed text-zinc-300 text-lg space-y-4">
+                <p>Prazer, me chamo <strong class="text-white">mdzinz</strong>, mas pode me chamar de <strong class="text-acentovermelho">md</strong>.</p>
+                <p>Gosto de testar jogos em desenvolvimento. Sou dono do servidor <strong class="text-white">GUILDA</strong>.</p>
+                <p>Gosto de desenhar, mas odeio pintar, talvez seja porque eu sou horrível em pintar. Já fiz vários desenhos.</p>
+                <p class="text-zinc-400 itálico pt-2 borda-t borda-zinc-800">
                     Esse é o básico sobre mim. Obrigado por estar visitando meu site, seja bem-vindo!
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- My Arts Section -->
+    <!-- Minha seção de artes -->
     <section id="artes" class="py-24 px-6">
-        <div class="max-w-7xl mx-auto space-y-12">
-            <div class="text-center space-y-2">
-                <h2 class="text-4xl font-bold tracking-tight">Minhas Artes 🎨</h2>
+        <div class="max-w-7xl mx-auto espaço-y-12">
+            <div class="espaço centralizado no texto-y-2">
+                <h2 class="text-4xl font-negrito espaçamento-ajustado">Minhas Artes</h2>
                 <p class="text-zinc-400">Alguns dos desenhos e esboços que criei</p>
-                <div class="w-16 h-1 bg-accentRed mx-auto rounded-full"></div>
+                <div class="w-16 h-1 bg-acentovermelho mx-auto rounded-full"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-cardBg rounded-xl overflow-hidden border border-zinc-800 hover:border-accentRed transition group">
+                <!-- Arte 1 -->
+                <div class="bg-cartaoBg rounded-xl overflow-hidden border border-zinc-800 hover:border-acentovermelho transition group">
                     <div class="h-80 overflow-hidden bg-zinc-900">
-                        <img src="1000070345.png" alt="Desenho 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <img src="1787455455037.png" alt="Desenho 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <div class="p-6">
-                        <h3 class="font-semibold text-lg text-white">Esboço de Personagens</h3>
-                        <p class="text-sm text-zinc-400 mt-1">Arte feita a lápis</p>
+                        <h3 class="text-semibold lg text-white">Esboço de Personagens</h3>
+                        <p class="text-sm text-zinc-400 mt-1">Arte para uso</p>
                     </div>
                 </div>
-                <div class="bg-cardBg rounded-xl overflow-hidden border border-zinc-800 hover:border-accentRed transition group">
+
+                <!-- Arte 2 -->
+                <div class="bg-cartaoBg rounded-xl overflow-hidden border border-zinc-800 hover:border-acentovermelho transition group">
                     <div class="h-80 overflow-hidden bg-zinc-900">
-                        <img src="1000072452.jpg" alt="Desenho 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <img src="20260112_172824.jpg" alt="Desenho 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <div class="p-6">
-                        <h3 class="font-semibold text-lg text-white">Cavaleiro Medieval</h3>
-                        <p class="text-sm text-zinc-400 mt-1">Estudo de armadura e espada</p>
+                        <h3 class="text-semibold lg text-white">Cavaleiro Medieval</h3>
+                        <p class="text-sm text-zinc-400 mt-1">Estudo de belo e espada</p>
                     </div>
                 </div>
-                <div class="bg-cardBg rounded-xl overflow-hidden border border-zinc-800 hover:border-accentRed transition group">
+
+                <!-- Arte 3 -->
+                <div class="bg-cartaoBg rounded-xl overflow-hidden border border-zinc-800 hover:border-acentovermelho transition group">
                     <div class="h-80 overflow-hidden bg-zinc-900">
-                        <img src="1000072448.jpg" alt="Desenho 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <img src="20260205_180514.jpg" alt="Desenho 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <div class="p-6">
-                        <h3 class="font-semibold text-lg text-white">Personagem com Faixas</h3>
+                        <h3 class="text-semibold lg text-white">Personagem com faixas</h3>
                         <p class="text-sm text-zinc-400 mt-1">Traço detalhado</p>
                     </div>
                 </div>
-                <div class="bg-cardBg rounded-xl overflow-hidden border border-zinc-800 hover:border-accentRed transition group">
+
+                <!-- Arte 4 -->
+                <div class="bg-cartaoBg rounded-xl overflow-hidden border border-zinc-800 hover:border-acentovermelho transition group">
                     <div class="h-80 overflow-hidden bg-zinc-900">
-                        <img src="1000072447.jpg" alt="Desenho 4" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <img src="20260825_160426.jpg" alt="Desenho 4" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <div class="p-6">
-                        <h3 class="font-semibold text-lg text-white">Conceito Criativo</h3>
+                        <h3 class="text-semibold lg text-white">Criativo</h3>
                         <p class="text-sm text-zinc-400 mt-1">Estilo único</p>
                     </div>
                 </div>
-                <div class="bg-cardBg rounded-xl overflow-hidden border border-zinc-800 hover:border-accentRed transition group">
+
+                <!-- Arte 5 (Usando o avatar/foto principal novamente ou outra disponível) -->
+                <div class="bg-cartaoBg rounded-xl overflow-hidden border border-zinc-800 hover:border-acentovermelho transition group">
                     <div class="h-80 overflow-hidden bg-zinc-900">
-                        <img src="1000072449.jpg" alt="Desenho 5" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <img src="20260106_165138-1.jpg" alt="Desenho 5" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <div class="p-6">
-                        <h3 class="font-semibold text-lg text-white">Cabelo e Expressão</h3>
+                        <h3 class="text-semibold lg text-white">Cabelo e Expressão</h3>
                         <p class="text-sm text-zinc-400 mt-1">Treinamento de traço</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Guilda Discord Section -->
-    <section id="guilda" class="py-24 bg-[#0d0d0d] border-t border-zinc-900 px-6">
-        <div class="max-w-4xl mx-auto bg-cardBg border border-zinc-800 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 shadow-2xl">
-            <div class="w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden border-2 border-accentRed shrink-0 shadow-lg shadow-red-900/20">
-                <img src="1000071800.png" alt="Guilda Server Icon" class="w-full h-full object-cover">
-            </div>
-            <div class="space-y-4 text-center md:text-left">
-                <div class="inline-block bg-accentRed/10 text-accentRed px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase">
-                    Comunidade Oficial
-                </div>
-                <h2 class="text-3xl font-bold tracking-tight">Servidor GUILDA</h2>
-                <p class="text-zinc-400 text-sm md:text-base">
-                    Um espaço livre para falar sobre todos os assuntos do mundo, fazer novas amizades e trocar ideias, sempre respeitando as regras. Cola lá com a gente!
-                </p>
-                <div>
-                    <a href="https://discord.gg/zp8yexarQr" target="_blank" class="inline-flex items-center gap-2 bg-[#5865F2] hover:bg-[#4752C4] text-white px-8 py-3 rounded-full font-medium transition shadow-lg">
-                        <i class="fa-brands fa-discord text-xl"></i> Entrar no Servidor
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-8 border-t border-zinc-900 text-center text-zinc-500 text-sm px-6">
-        <p>&copy; 2026 mdzinz. Criado com dedicação direto do celular 📱✨</p>
-    </footer>
 
 </body>
 </html>
